@@ -5,6 +5,8 @@ SQL Server Management Studio 21 ve Python kullanılarak geliştirilmiştir, bu p
 
 Database'de bulunan kitap bilgileri AI ile üretilmiştir ve doğrulukları garanti edilmez.
 
+Program deneysel şekilde ve öğrenme amacıyla geliştirilmiştir, başka amaçlarla kullanıma uygun değildir.
+
 # Kullanım
 MSSQL Server üzerinden bir database oluşturduktan sonra dbo dosyasındaki kodları sırayla çalıştırmalısınız, daha sonra da python dosyasını çalıştırmalısınız. 
 
