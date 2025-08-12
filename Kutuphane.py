@@ -14,25 +14,18 @@ conn = pyodbc.connect(
     'Trusted_Connection=yes;'
 )
 
-#Pencere Oluşturma
 pencere = Tk()
 pencere.title("KUTUPHANE")
 pencere.geometry("1215x650")
 pencere.configure(bg="lightblue")
 
 
-#İmleçle yapılacak işlemler için kod??
 cursor = conn.cursor()
 cursor.execute("SELECT * FROM KitapListesi") 
 rows = cursor.fetchall()
 
-
-#TkFont ile yazı tipi ayarlanması
 default_font = tkFont.nametofont("TkDefaultFont")
 default_font.configure(family="Helvetica", size=12)
-
-
-
 
 
 label = Label(pencere, text="HOŞ GELDİNİZ", font=("Verdana", 20), bg="lightblue", fg="white", justify="center") 
@@ -43,8 +36,6 @@ label.pack(side="top")
 # Treeview modülünü kullanarak tablo oluşturuyoruz
 sutunlar = [isimbul[0] for isimbul in cursor.description]  
 # pyodbc ile bir SQL sorgusu (SELECT ...) çalıştığında, cursor.description bize sorgudan dönen sütunların bilgilerini verir.
-# Bu description listesi, her sütun için bir tuple tutar. O tuple’ın ilk elemanı sütunun adı olur.
-# isimbul[0] → her sütun bilgisinin ilk elemanı, yani sütun adı
 
 frame = Frame(pencere)
 frame.pack(fill="x", pady=10)
@@ -123,7 +114,6 @@ def kitapSil():
     item = secim[0]
     values = tree.item(item, 'values')
     
-    # Birincil anahtar sütununu bul (örneğin ilk sütun KitapID)
     kitap_id = values[0]  
 
     cevap = messagebox.askyesno("Onay", f"KitapID {kitap_id} olan kitabı silmek istediğine emin misin?")
@@ -146,8 +136,6 @@ def enIyiler():
         tree.insert("", "end", values=[str(v) if v is not None else "" for v in row])
 
 
-
-# Arama fonksiyonu
 def kitap_ara():
     kelime = entry_ara.get()
     for i in tree.get_children():
@@ -218,19 +206,13 @@ def yildesc():
     for row in rows:
         tree.insert("", "end", values=[str(v) if v is not None else "" for v in row])
 
-
-
 def yil():
     global tiklama_sayisi
     tiklama_sayisi += 1
-    if tiklama_sayisi % 2 == 1:  # Tek basış
+    if tiklama_sayisi % 2 == 1: 
         yilasec()
-    else:  # Çift basış
+    else:  
         yildesc()
-
-
-
-
 
 def cikis():
     pencere.destroy()
@@ -293,6 +275,7 @@ btn_ara.pack(side=LEFT)
 
 btn = Button(bg='red', fg='white', text="ÇIKIŞ", command=cikis, width=12, height=3)
 btn.pack(padx=7, pady=10)
+
 
 
 pencere.mainloop()
