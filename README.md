@@ -3,9 +3,9 @@ Bu program Microsoft SQL Server'a bağlanarak var olan bir database üzerinde Py
 
 SQL Server Management Studio 21 ve Python kullanılarak geliştirilmiştir, bu programların yüklü olması gerekmektedir. Ayrıca kullanılan Python kütüphaneleri önceden kurulmamışsa komut paneli ile kurulmaları gerekebilir. Windows terminali için örnek komut: **py -m pip install pyodbc**
 
-Database'de bulunan kitap bilgileri AI ile üretilmiştir ve doğrulukları garanti edilmez.
+- Database'de bulunan kitap bilgileri AI ile üretilmiştir ve doğrulukları garanti edilmez.
 
-Program deneysel şekilde ve öğrenme amacıyla geliştirilmiştir, başka amaçlarla kullanıma uygun değildir.
+- Program deneysel şekilde ve öğrenme amacıyla geliştirilmiştir, başka amaçlarla kullanıma uygun değildir.
 
 # Kullanım
 MSSQL Server üzerinden bir database oluşturduktan sonra dbo dosyasındaki kodları sırayla çalıştırmalısınız, daha sonra da python dosyasını çalıştırmalısınız. 
