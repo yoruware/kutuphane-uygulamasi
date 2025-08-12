@@ -1,0 +1,70 @@
+--MSSQL veritabanınızı kurduktan sonra çalıştırmanız gereken kodlar
+
+create table KitapListesi (
+	ID int not null primary key,
+	KitapAdi varchar(100) not null,
+	Yazar varchar(100) not null,
+	Tur varchar(50) not null,
+	BasimYili int not null,
+	ISBN varchar(20) not null,
+	Durum varchar(100) default 'Belirtilmedi',
+);
+
+INSERT INTO Kitaplar (KitapID, Baslik, Yazar, Tur, BasimYili, ISBN, Durum) VALUES
+(1, 'Tutunamayanlar', 'Oğuz Atay', 'Roman', 1971, '978-9754700113', 'Mevcut'),
+(2, 'Tehlikeli Oyunlar', 'Oğuz Atay', 'Roman', 1973, '978-9754700663', 'Odunc'),
+(3, 'Bir Bilim Adamının Romanı', 'Oğuz Atay', 'Biyografi', 1975, '978-9754700649', 'Mevcut'),
+(4, 'Saatleri Ayarlama Enstitüsü', 'Ahmet Hamdi Tanpınar', 'Roman', 1961, '978-9754700641', 'Odunc'),
+(5, 'Huzur', 'Ahmet Hamdi Tanpınar', 'Roman', 1949, '978-9754700658', 'Mevcut'),
+(6, 'Kürk Mantolu Madonna', 'Sabahattin Ali', 'Roman', 1943, '978-9750706310', 'Mevcut'),
+(7, 'İçimizdeki Şeytan', 'Sabahattin Ali', 'Roman', 1940, '978-9750706327', 'Odunc'),
+(8, 'Kuyucaklı Yusuf', 'Sabahattin Ali', 'Roman', 1937, '978-9750706334', 'Mevcut'),
+(9, 'Yaban', 'Yakup Kadri Karaosmanoğlu', 'Roman', 1932, '978-9754700428', 'Odunc'),
+(10, 'Ankara', 'Yakup Kadri Karaosmanoğlu', 'Roman', 1934, '978-9754700411', 'Mevcut'),
+(11, 'Panorama', 'Yakup Kadri Karaosmanoğlu', 'Roman', 1953, '978-9754700435', 'Mevcut'),
+(12, 'Eylül', 'Mehmet Rauf', 'Roman', 1901, '978-9754700466', 'Mevcut'),
+(13, 'Aşk-ı Memnu', 'Halit Ziya Uşaklıgil', 'Roman', 1899, '978-9754700473', 'Odunc'),
+(14, 'Mai ve Siyah', 'Halit Ziya Uşaklıgil', 'Roman', 1897, '978-9754700480', 'Mevcut'),
+(15, 'Çalıkuşu', 'Reşat Nuri Güntekin', 'Roman', 1922, '978-9754700497', 'Odunc'),
+(16, 'Acımak', 'Reşat Nuri Güntekin', 'Roman', 1928, '978-9754700503', 'Mevcut'),
+(17, 'Yeşil Gece', 'Reşat Nuri Güntekin', 'Roman', 1928, '978-9754700510', 'Odunc'),
+(18, 'Ateşten Gömlek', 'Halide Edib Adıvar', 'Roman', 1922, '978-9754700527', 'Mevcut'),
+(19, 'Sinekli Bakkal', 'Halide Edib Adıvar', 'Roman', 1936, '978-9754700534', 'Odunc'),
+(20, 'Vurun Kahpeye', 'Halide Edib Adıvar', 'Roman', 1926, '978-9754700541', 'Mevcut'),
+(21, 'Fatih-Harbiye', 'Peyami Safa', 'Roman', 1931, '978-9754700558', 'Mevcut'),
+(22, 'Dokuzuncu Hariciye Koğuşu', 'Peyami Safa', 'Roman', 1930, '978-9754700565', 'Odunc'),
+(23, 'Yalnızız', 'Peyami Safa', 'Roman', 1951, '978-9754700572', 'Mevcut'),
+(24, 'Matmazel Noraliya''nın Koltuğu', 'Peyami Safa', 'Roman', 1949, '978-9754700589', 'Mevcut'),
+(25, 'Devlet Ana', 'Kemal Tahir', 'Tarihî Roman', 1967, '978-9754700596', 'Odunc'),
+(26, 'Esir Şehrin İnsanları', 'Kemal Tahir', 'Roman', 1956, '978-9754700602', 'Mevcut'),
+(27, 'Yorgun Savaşçı', 'Kemal Tahir', 'Roman', 1965, '978-9754700619', 'Mevcut'),
+(28, 'İnce Memed', 'Yaşar Kemal', 'Roman', 1955, '978-9754700626', 'Mevcut'),
+(29, 'Yer Demir Gök Bakır', 'Yaşar Kemal', 'Roman', 1963, '978-9754700633', 'Odunc'),
+(30, 'Demirciler Çarşısı Cinayeti', 'Yaşar Kemal', 'Roman', 1974, '978-9754700640', 'Mevcut'),
+(31, 'Teneke', 'Yaşar Kemal', 'Roman', 1955, '978-9754700657', 'Mevcut'),
+(32, 'Sevda Sözleri', 'Cemal Süreya', 'Şiir', 1984, '978-9754700664', 'Odunc'),
+(33, 'Bütün Şiirleri', 'Orhan Veli Kanık', 'Şiir', 1951, '978-9754700671', 'Mevcut'),
+(34, 'Memleketimden İnsan Manzaraları', 'Nazım Hikmet', 'Şiir', 1966, '978-9754700688', 'Mevcut'),
+(35, '835 Satır', 'Nazım Hikmet', 'Şiir', 1929, '978-9754700695', 'Odunc'),
+(36, 'Kendi Gök Kubbemiz', 'Yahya Kemal Beyatlı', 'Şiir', 1961, '978-9754700701', 'Mevcut'),
+(37, 'Safahat', 'Mehmet Akif Ersoy', 'Şiir', 1911, '978-9754700718', 'Mevcut'),
+(38, 'Açlık', 'Knut Hamsun', 'Roman', 1890, '978-9754700725', 'Odunc'),
+(39, 'Savaş ve Barış', 'Lev Tolstoy', 'Roman', 1869, '978-9754700732', 'Mevcut'),
+(40, 'Suç ve Ceza', 'Fyodor Dostoyevski', 'Roman', 1866, '978-9754700749', 'Odunc'),
+(41, 'Karamazov Kardeşler', 'Fyodor Dostoyevski', 'Roman', 1880, '978-9754700756', 'Mevcut'),
+(42, 'Beyaz Geceler', 'Fyodor Dostoyevski', 'Roman', 1848, '978-9754700763', 'Mevcut'),
+(43, 'İnsancıklar', 'Fyodor Dostoyevski', 'Roman', 1846, '978-9754700770', 'Odunc'),
+(44, 'Uğultulu Tepeler', 'Emily Brontë', 'Roman', 1847, '978-9754700787', 'Mevcut'),
+(45, 'Jane Eyre', 'Charlotte Brontë', 'Roman', 1847, '978-9754700794', 'Odunc'),
+(46, 'Madame Bovary', 'Gustave Flaubert', 'Roman', 1857, '978-9754700800', 'Mevcut'),
+(47, 'Deniz Feneri', 'Virginia Woolf', 'Roman', 1927, '978-9754700817', 'Mevcut'),
+(48, 'Kendine Ait Bir Oda', 'Virginia Woolf', 'Deneme', 1929, '978-9754700824', 'Odunc'),
+(49, 'Dalgalar', 'Virginia Woolf', 'Roman', 1931, '978-9754700831', 'Mevcut'),
+(50, 'Mrs Dalloway', 'Virginia Woolf', 'Roman', 1925, '978-9754700848', 'Mevcut');
+
+ALTER TABLE KitapListesi
+ADD Puan tinyint;
+
+UPDATE TOP (50) KitapListesi
+SET Puan = ABS(CHECKSUM(NEWID())) % 10 + 1
+WHERE Puan IS NULL OR Puan = 0;
