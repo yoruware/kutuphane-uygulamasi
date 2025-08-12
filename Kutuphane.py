@@ -130,6 +130,9 @@ def kitapSil():
 
 
 def enIyiler():
+    for i in tree.get_children():
+        tree.delete(i)
+    
     cursor.execute('select top 10 * from KitapListesi where Puan>=7')
     rows = cursor.fetchall()
     for row in rows:
@@ -279,3 +282,4 @@ btn.pack(padx=7, pady=10)
 
 
 pencere.mainloop()
+
